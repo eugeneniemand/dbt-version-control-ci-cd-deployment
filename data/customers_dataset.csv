@@ -1,0 +1,13 @@
+CustomerID,CustomerName,JoinDate,Status
+CUST999,Customer UNK,2999-12-31,Active
+CUST100,Customer 1,2023-01-01,Inactive
+CUST101,Customer 2,2023-01-02,Active
+CUST102,Customer 3,2023-01-03,Active
+CUST103,Customer 4,2023-01-04,Inactive
+CUST104,Customer 5,2023-01-05,Active
+CUST105,Customer 6,2023-01-06,Active
+CUST106,Customer 7,2023-01-07,Inactive
+CUST107,Customer 8,2023-01-08,Active
+CUST108,Customer 9,2023-01-09,Active
+CUST109,Customer 10,2023-01-10,Inactive
+CUST110,Customer 11,2025-04-06,Active

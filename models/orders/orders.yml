@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: orders
+    description: "Source model for orders data"
+    columns:
+      - name: OrderID
+      - name: CustomerID
+      - name: OrderDate
+      - name: Quantity
+      - name: Category
+      - name: Status

@@ -1,0 +1,25 @@
+unit_tests:
+  - name: test_total_orders_by_customer
+    description: "Test to check total orders per customer"
+    model: total_orders_by_customer
+    given:
+      - input: ref('customers_stg')
+        rows:
+          - CustomerID: 1
+            JoinDate: '2024-01-01'
+          - CustomerID: 2
+            JoinDate: null
+      - input: ref('orders_stg')
+        rows:
+          - CustomerID: 1
+            OrderID: 1
+          - CustomerID: 1
+            OrderID: 2
+          - CustomerID: 2
+            OrderID: 3
+    expect:
+      rows:
+        - CustomerID: 1
+          TotalOrders: 2
+        - CustomerID: 2
+          TotalOrders: 1

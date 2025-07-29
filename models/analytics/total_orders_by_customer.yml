@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: total_orders_by_customer
+    description: "As an analyst, I want to count total orders per customer excluding inactive customers, so that our reports reflect only active users with valid join dates."
+    columns:
+      - name: CustomerID
+        description: "The unique identifier for each customer."
+      - name: TotalOrders
+        description: "The total number of orders placed by the customer."

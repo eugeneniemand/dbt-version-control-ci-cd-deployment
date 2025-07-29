@@ -1,0 +1,17 @@
+unit_tests:
+  - name: test_join_date_casts_to_date
+    description: "Test to check if JoinDate is cast to date and nulls are replaced with a default"
+    model: customers_stg
+    given:
+      - input: ref('customers')
+        rows:
+          - CustomerID: 1
+            JoinDate: "2023-01-01"
+          - CustomerID: 2
+            JoinDate: null
+    expect:
+      rows:
+        - CustomerID: 1
+          JoinDate: "2023-01-01T00:00:00Z"
+        - CustomerID: 2
+          JoinDate: "2999-12-31T00:00:00Z"

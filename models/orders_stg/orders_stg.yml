@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: orders_stg
+    description: "Staging model with test for Orders"
+    columns:
+      - name: OrderID
+        tests:
+          - not_null
+          - unique
+      - name: CustomerID
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customers')
+              field: CustomerID
+      - name: OrderDate
+        tests:
+          - not_null
+      - name: Quantity
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "< 100"
+              warn_if: "> 0"
+              error_if: "> 2"
+      - name: Category
+        tests:
+          - accepted_values:
+              name: accepted_values_orders_category
+              values: ['Electronics', 'Clothing', 'Home', 'Food']
+              severity: warn
+      - name: Status
+        tests:
+          - accepted_values:
+              values: ['Pending', 'Completed', 'Cancelled']

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: customers_stg
+    description: "Staging model for customers data"
+    columns:
+      - name: CustomerID
+      - name: CustomerName
+        description: This is a customer's first and last name concatenated
+        meta:
+          owner: accounts@nobodysbusiness.co.uk
+          sensitivity: pii
+      - name: JoinDate
+        description: A JoinDate of '2999-12-31' is a placeholder for customers without a confirmed join date and should be treated as inactive. These customers must be excluded from any aggregations or reporting.
+      - name: Tenure
+        description: This is how long a customer has been a customer
+      - name: Status
+        description: "{{doc('customer_status')}}"
+    meta:
+      owner: crm@nobodysbusiness.co.uk
+      sensitivity: high

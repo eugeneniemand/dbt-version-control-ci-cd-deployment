@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: customers
+    columns:
+      - name: CustomerID
+      - name: CustomerName
+      - name: JoinDate
+      - name: Status
