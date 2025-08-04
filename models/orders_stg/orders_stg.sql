@@ -10,4 +10,4 @@ SELECT
 FROM
 	{{ ref('orders') }}
 WHERE
-	Status NOT IN ('cancelled', 'pending')
+	Status NOT IN ('cancelled')
